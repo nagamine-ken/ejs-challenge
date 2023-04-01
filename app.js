@@ -15,8 +15,12 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+let posts = []
+
 app.get("/", function(req, res){
-  res.render("home", { startingContent: homeStartingContent })
+  res.render("home", { startingContent: homeStartingContent, postsArray: posts })
+
+  // console.log(posts)
 })
 
 app.get("/about", function(req, res){
@@ -32,10 +36,12 @@ app.get("/compose", function(req, res){
 })
 
 app.post("/compose", function(req, res){
-  var nameInput = req.body.name
-  var textInput = req.body.content
-  console.log(nameInput)
-  console.log(textInput)
+  const post = {};
+  post.title = req.body.title
+  post.content = req.body.content
+  posts.push(post)
+
+  res.redirect("/")  
 })
 
 

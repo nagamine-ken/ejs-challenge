@@ -3,4 +3,8 @@
     Hello!
 </h1>
 <p><%= startingContent %></p>
+<% console.log(postsArray) %>
+<% for (var i = 0; i <= postsArray.length; i++){ %>
+<% console.log(postsArray[i].title) %>
+<% } %>
 <%- include('partials/footer'); -%>
