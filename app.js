@@ -44,10 +44,9 @@ app.post("/compose", function(req, res){
   res.redirect("/")  
 })
 
-
-
-
-
+app.get("/posts/:extension", function(req, res){
+  console.log(req.params.extension)
+})
 
 
 
