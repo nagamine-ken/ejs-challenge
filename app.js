@@ -64,7 +64,7 @@ app.get("/post/:extension", function(req, res){
 
 
 
-
+// process.env.PORT makes a dynamic port for Heroku deployment
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000")
 })
