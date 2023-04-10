@@ -19,7 +19,7 @@ app.use(express.static("public"));
 let posts = []
 
 app.get("/", function(req, res){
-  res.render( __dirname + "home", { startingContent: homeStartingContent, postsArray: posts })
+  res.render("home", { startingContent: homeStartingContent, postsArray: posts })
   
   // console.log(posts)
 })
